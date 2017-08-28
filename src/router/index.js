@@ -5,6 +5,7 @@ import Main from '@/views/Main'
 import Home from '@/views/Home'
 import Courses from '@/views/Courses'
 import Notice from '@/views/Notice'
+import Me from '@/views/Me'
 
 import CourseDetail from '@/views/CourseDetail'
 
@@ -20,7 +21,8 @@ export default new Router({
       children: [
         {name: 'Home', path: 'home', component: Home},
         {name: 'Courses', path: 'courses', component: Courses},
-        {name: 'Notice', path: 'notice', component: Notice}
+        {name: 'Notice', path: 'notice', component: Notice},
+        {name: 'Me', path: 'me', component: Me}
       ]
     },
     {name: 'CourseDetail', path: '/course/:courseid', component: CourseDetail}

@@ -1,25 +1,21 @@
 <template>
   <div class="main">
-    <div class="tabs">
-      <ul>
-        <router-link :to="{ name: 'Home'}" tag="li">首页</router-link>
-        <router-link :to="{ name: 'Courses'}" tag="li">课程库</router-link>
-        <router-link :to="{ name: 'Notice'}" tag="li">公告</router-link>
-      </ul>
-    </div>
+    <tabs></tabs>
     Main容器：
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+  import Tabs from '../components/tabs.vue'
 export default {
-  name: 'main',
-  data () {
-    return {
-      msg: 'Main.vue msg'
-    }
-  }
+    name: 'main',
+    data () {
+      return {
+        msg: 'Main.vue msg'
+      }
+    },
+    components: {Tabs}
 }
 </script>
 
