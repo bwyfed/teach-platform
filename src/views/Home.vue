@@ -1,17 +1,33 @@
 <template>
-  <div class="main">
-    {{msg}}
+  <div class="home" v-if="page_data">
+    <div class="section">
+      <slider :slides="page_data.top"></slider>
+      <div class="announcement">
+        <label>快讯</label>
+        <span>今日上架的图书全部8折</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+  import Slider from "../components/slider.vue"
+  import HomePageData from "/mock/home.json"
 export default {
   name: 'home',
   data () {
     return {
-      msg: 'Home.vue msg'
+      page_data: null,
+      selected: null
     }
-  }
+  },
+  created() {
+      this.page_data = HomePageData;
+  },
+  mounted() {
+      document.title = "教学系统首页";
+  },
+  components: {Slider}
 }
 </script>
 
